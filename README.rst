@@ -2,11 +2,29 @@
 I'mport; REST Client
 =====================
 
+.. |Maintenance yes| image:: https://img.shields.io/badge/Maintained%3F-yes-green.svg
+    :target: https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity
+
+.. |PyPI download total| image:: https://img.shields.io/pypi/dt/ansicolortags.svg
+    :target: https://pypi.org/project/iamport-rest-client/
+
+.. |PyPI license| image:: https://img.shields.io/pypi/l/ansicolortags.svg
+    :target: https://pypi.org/project/iamport-rest-client/
+
+.. |PyPI pyversions| image:: https://img.shields.io/pypi/pyversions/ansicolortags.svg
+    :target: https://pypi.org/project/iamport-rest-client/
+
+.. |PyPI implementation| image:: https://img.shields.io/pypi/implementation/ansicolortags.svg
+    :target: https://pypi.org/project/iamport-rest-client/
+
+.. |GitHub license| image:: https://img.shields.io/github/license/Naereen/StrapDown.js.svg
+    :target: https://github.com/Naereen/StrapDown.js/blob/master/LICENSE
+
 .. image:: https://travis-ci.org/iamport/iamport-rest-client-python.svg?branch=master
     :target: https://travis-ci.org/iamport/iamport-rest-client-python
 
 .. image:: https://codecov.io/gh/iamport/iamport-rest-client-python/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/iamport/iamport-rest-client-python
+    :target: https://codecov.io/gh/iamport/iamport-rest-client-python
 
 
 Python 사용자를 위한 아임포트 REST API 연동 모듈입니다.
