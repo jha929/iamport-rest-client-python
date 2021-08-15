@@ -217,10 +217,34 @@ class Iamport(object):
         url = '{}vbanks/{}'.format(self.imp_url, imp_uid)
         return self._delete(url)
 
+    """ 
+    certifications : SMS본인인증결과 조회 및 관리
+    """ 
+
+    # DELETE /certifications/{imp_uid} - 휴대폰 본인인증 결과를 삭제합니다.
+    def cancel_certification(self, imp_uid):
+        url = '{}certifications/{}'.format(self.imp_url, imp_uid)
+        return self._delete(url)
+
+    # GET /certifications/{imp_uid} - 휴대폰 본인인증 결과를 조회합니다.
     def find_certification(self, imp_uid):
         url = '{}certifications/{}'.format(self.imp_url, imp_uid)
         return self._get(url)
 
-    def cancel_certification(self, imp_uid):
-        url = '{}certifications/{}'.format(self.imp_url, imp_uid)
-        return self._delete(url)
+    # POST /certifications/otp/request - API방식으로 휴대폰 본인인증 프로세스를 시작합니다.
+    def request_certification(self, **kwargs):
+        url = '{}certifications/otp/request'.format(self.imp_url)
+        for key in ['name', 'phone', 'birth', 'gender_digit', 'carrier']:
+            if key not in kwargs:
+                raise KeyError('Essential parameter is missing!: %s' % key)
+
+        return self._post(url, kwargs)
+    
+    # POST /certifications/otp/confirm/{imp_uid}
+    # API방식으로 휴대폰 본인인증 진행 시, SMS로 전송된 인증번호를 전달하여 본인인증을 완료합니다.
+    def confirm_certification(self, imp_uid, **kwargs):
+        url = '{}certifications/otp/confirm/{}'.format(self.imp_url, imp_uid)
+        if 'otp' not in kwargs:
+            raise KeyError('Essential parameter is missing!: otp')
+
+        return self._post(url, kwargs)
